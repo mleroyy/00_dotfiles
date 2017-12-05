@@ -1,0 +1,48 @@
+" **************************************************************************** "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    .vimrc                                             :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: Belotte <fbellott@student.42.fr>           +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2015/12/06 17:03:23 by Belotte           #+#    #+#              "
+"    Updated: 2017/12/03 20:37:43 by mathieuleroy        ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+set background=dark
+colorscheme mustang
+
+syntax on
+set colorcolumn=81
+set number
+set tabstop=4
+filetype plugin indent on
+set smartindent
+set autoindent
+set cindent
+set backspace=indent,eol,start
+set showmode
+set ruler
+set showcmd
+execute pathogen#infect('stuff/{}')
+set sessionoptions-=options
+set autoread
+hi SpecialKey ctermfg=66 guifg=#649A9A ctermbg=NONE
+hi Nontext ctermfg=66 guifg=#649A9A ctermbg=NONE
+set listchars=eol:$,tab:\|\ ,trail:.
+set list
+
+inoremap {<Enter>	{<CR>}<Up><Enter>
+inoremap [	[]<Left>
+inoremap (	()<Left>
+inoremap '	''<Left>
+inoremap "	""<Left>
+autocmd BufRead	*.[ch] inoremap #in		#include<Space>
+
+hi! sp ctermbg=NONE guibg=NONE ctermfg=red guifg=red
+
+autocmd BufRead 			* match sp /^[^(\#)]]]\ \{2,}\|\t\+\n\|\ \+\n/
+autocmd BufRead 			*.[ch] match sp /^[^(\/\*)]]]\ \{2,}\|\t\+\n\|\ \+\n/
+source /Users/mathieuleroy/.vim/autoload/stdheader.vim
+source /Users/mathieuleroy/.vim/autoload/myheader.vim
