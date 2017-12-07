@@ -78,8 +78,8 @@ execute pathogen#infect()
 "----------------------------------------------------------
 "Colors
 "----------------------------------------------------------
-"set 		textwidth=80
-"set 		colorcolumn=+1
+set 		textwidth=80
+set 		colorcolumn=+1
 "highlight	ColorColumn ctermbg=2
 highlight	NonText guifg=#4a4a59
 highlight	SpecialKey guifg=#4a4a59
